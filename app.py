@@ -47,104 +47,123 @@ SHURIKEN_SVG = (
 )
 SHURIKEN = base64.b64encode(SHURIKEN_SVG.encode()).decode()
 
-# ---------- Premium animated theme ----------
+/* ---------- Premium animated theme (Updated with High Readability) ---------- */
 CSS = """
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Cinzel:wght@600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cinzel:wght@600;800&display=swap');
 
-/* Streamlit-এর বাড়তি অংশ লুকানো */
+/* Streamlit-er বাড়তি অংশ লুকানো */
 #MainMenu, footer, .stDeployButton, [data-testid="stToolbar"], [data-testid="stDecoration"] { display: none !important; }
 header[data-testid="stHeader"] { background: transparent; }
 
-/* সুন্দর বাংলা font */
+/* Sundor o spshto font color fix */
 .stApp, .stApp p, .stApp li, .stApp label, .stApp small, .stApp textarea, .stApp input, .stApp button,
 .stApp [data-testid="stCaptionContainer"] {
-font-family: 'Hind Siliguri', 'Noto Sans Bengali', 'Segoe UI', sans-serif;
+    font-family: 'Hind Siliguri', 'Noto Sans Bengali', 'Segoe UI', sans-serif;
+    color: #ffffff !important;
 }
-[data-testid="stChatMessage"] p { font-size: 1.04rem; line-height: 1.7; }
 
 .stApp {
-background-image: linear-gradient(rgba(5,6,15,0.80), rgba(5,6,15,0.92)), url("data:image/jpg;base64,__BG__");
-background-size: cover; background-attachment: fixed; background-position: center;
-animation: bgfade 1.2s ease;
+    background-image: linear-gradient(rgba(5,6,15,0.85), rgba(5,6,15,0.95)), url("data:image/jpg;base64,__BG__");
+    background-size: cover; background-attachment: fixed; background-position: center;
+    animation: bgfade 1.2s ease;
 }
 @keyframes bgfade { from {opacity:0;} to {opacity:1;} }
+
 [data-testid="stSidebar"] {
-background: linear-gradient(180deg, rgba(11,13,23,0.96), rgba(22,10,18,0.96));
-border-right: 1px solid rgba(230,57,70,0.6);
-box-shadow: 4px 0 30px rgba(230,57,70,0.15);
+    background: linear-gradient(180deg, rgba(11,13,23,0.98), rgba(22,10,18,0.98));
+    border-right: 1px solid rgba(230,57,70,0.6);
+    box-shadow: 4px 0 30px rgba(230,57,70,0.15);
 }
 [data-testid="stSidebar"] img { border-radius: 14px; box-shadow: 0 0 22px rgba(230,57,70,0.35); }
+
 .hero { display:flex; align-items:center; gap:18px; margin: 4px 0 10px 0; }
 .hero img.logo {
-width: 84px; height: 84px; border-radius: 50%; object-fit: cover;
-border: 2px solid #e63946;
-animation: floaty 3.5s ease-in-out infinite, glow 2.5s ease-in-out infinite;
+    width: 84px; height: 84px; border-radius: 50%; object-fit: cover;
+    border: 2px solid #e63946;
+    animation: floaty 3.5s ease-in-out infinite, glow 2.5s ease-in-out infinite;
 }
 .side-brand { display:flex; align-items:center; gap:12px; margin: 10px 0 4px 0; }
 .side-brand img.logo {
-width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
-border: 2px solid #e63946;
-animation: floaty 3.5s ease-in-out infinite, glow 2.5s ease-in-out infinite;
+    width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
+    border: 2px solid #e63946;
+    animation: floaty 3.5s ease-in-out infinite, glow 2.5s ease-in-out infinite;
 }
 .brand {
-font-family: 'Cinzel', serif; font-weight: 800; letter-spacing: 4px; font-size: 2.6rem; line-height: 1.1;
-background: linear-gradient(90deg, #e63946, #ffb347, #e63946);
-background-size: 200% auto; -webkit-background-clip: text; background-clip: text;
--webkit-text-fill-color: transparent; animation: shimmer 4s linear infinite;
+    font-family: 'Cinzel', serif; font-weight: 800; letter-spacing: 4px; font-size: 2.6rem; line-height: 1.1;
+    background: linear-gradient(90deg, #ff4d5a, #ffb347, #ff4d5a);
+    background-size: 200% auto; -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; animation: shimmer 4s linear infinite;
 }
 .brand.small { font-size: 1.25rem; letter-spacing: 2px; }
-.tagline { color: #c9c9d6; letter-spacing: 3px; font-size: 0.78rem; opacity: 0.85; text-transform: uppercase; }
+.tagline { color: #d0d0e0; letter-spacing: 3px; font-size: 0.82rem; opacity: 0.9; text-transform: uppercase; font-weight: 500; }
 @keyframes shimmer { to { background-position: 200% center; } }
 @keyframes floaty { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-7px); } }
 @keyframes glow {
-0%,100% { box-shadow: 0 0 10px rgba(230,57,70,0.4), 0 0 24px rgba(230,57,70,0.2); }
-50% { box-shadow: 0 0 22px rgba(230,57,70,0.9), 0 0 48px rgba(230,57,70,0.45); }
+    0%,100% { box-shadow: 0 0 10px rgba(230,57,70,0.4), 0 0 24px rgba(230,57,70,0.2); }
+    50% { box-shadow: 0 0 22px rgba(230,57,70,0.9), 0 0 48px rgba(230,57,70,0.45); }
 }
 
-/* Chat bubble: লুকানো marker দিয়ে user আর Ninja আলাদা করা */
 .u-mark, .a-mark { display: none; }
 [data-testid="stElementContainer"]:has(.u-mark), [data-testid="stElementContainer"]:has(.a-mark),
 .element-container:has(.u-mark), .element-container:has(.a-mark) { display: none; }
 
 [data-testid="stChatMessage"] {
-backdrop-filter: blur(8px); border-radius: 16px;
-animation: slidein 0.5s ease both;
+    backdrop-filter: blur(12px); border-radius: 16px;
+    animation: slidein 0.5s ease both;
+    padding: 14px 18px;
 }
+
+/* Chat-er sob text-e sadha r high-contrast fix */
+[data-testid="stChatMessage"] *,
+[data-testid="stChatMessage"] p,
+[data-testid="stChatMessage"] span,
+[data-testid="stChatMessage"] div {
+    font-size: 1.1rem !important;
+    line-height: 1.75 !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.95);
+}
+
+/* User Chat Bubble - Darker Red for Readability */
 [data-testid="stChatMessage"]:has(.u-mark) {
-flex-direction: row-reverse;
-margin-left: 18%;
-background: linear-gradient(135deg, rgba(230,57,70,0.30), rgba(110,18,32,0.42));
-border: 1px solid rgba(230,57,70,0.55);
-box-shadow: 0 4px 18px rgba(230,57,70,0.18);
+    flex-direction: row-reverse;
+    margin-left: 18%;
+    background: linear-gradient(135deg, rgba(150,20,30,0.95), rgba(60,8,15,0.95)) !important;
+    border: 1px solid rgba(255,90,105,0.7);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
+
+/* Ninja AI Chat Bubble - Deep Dark Blue/Black */
 [data-testid="stChatMessage"]:has(.a-mark) {
-margin-right: 10%;
-background: rgba(16,19,34,0.82);
-border: 1px solid rgba(255,255,255,0.07);
-border-left: 4px solid #ffb347;
-box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+    margin-right: 10%;
+    background: rgba(12, 15, 28, 0.96) !important;
+    border: 1px solid rgba(255, 179, 71, 0.4);
+    border-left: 5px solid #ffb347;
+    box-shadow: 0 4px 22px rgba(0,0,0,0.7);
 }
+
 @keyframes slidein { from { opacity:0; transform: translateY(18px); } to { opacity:1; transform: translateY(0); } }
 
-/* শুরিকেন spinner */
-.thinking { display:flex; align-items:center; gap:12px; color:#ffb347; letter-spacing:1px; padding:4px 0; }
+.thinking { display:flex; align-items:center; gap:12px; color:#ffb347; font-weight:600; letter-spacing:1px; padding:6px 0; }
 .thinking img { width: 30px; height: 30px; animation: spin 0.9s linear infinite; filter: drop-shadow(0 0 6px rgba(230,57,70,0.9)); }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 [data-testid="stChatInput"] { animation: pulse 3s ease-in-out infinite; border-radius: 14px; }
 @keyframes pulse {
-0%,100% { box-shadow: 0 0 6px rgba(230,57,70,0.35); }
-50% { box-shadow: 0 0 20px rgba(230,57,70,0.8); }
+    0%,100% { box-shadow: 0 0 6px rgba(230,57,70,0.35); }
+    50% { box-shadow: 0 0 20px rgba(230,57,70,0.8); }
 }
 .stButton button { border: 1px solid #e63946; background: transparent; color: #f1f1f1; transition: all 0.3s ease; }
 .stButton button:hover { background: #e63946; color: white; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(230,57,70,0.5); }
 .embers { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
 .ember { position: absolute; bottom: -12px; border-radius: 50%; background: #ff5a36; box-shadow: 0 0 10px #ff5a36; opacity: 0; animation: rise linear infinite; }
 @keyframes rise {
-0% { transform: translateY(0) translateX(0); opacity: 0; }
-10% { opacity: 0.85; }
-100% { transform: translateY(-105vh) translateX(45px); opacity: 0; }
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    10% { opacity: 0.85; }
+    100% { transform: translateY(-105vh) translateX(45px); opacity: 0; }
 }
 </style>
 """

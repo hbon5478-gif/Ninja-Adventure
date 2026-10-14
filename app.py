@@ -46,17 +46,16 @@ SHURIKEN_SVG = (
     '<circle cx="50" cy="50" r="9" fill="#0b0d17"/></svg>'
 )
 SHURIKEN = base64.b64encode(SHURIKEN_SVG.encode()).decode()
-
-/* ---------- Premium animated theme (Updated with High Readability) ---------- */
+# ---------- Premium animated theme ----------
 CSS = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Cinzel:wght@600;800&display=swap');
 
-/* Streamlit-er বাড়তি অংশ লুকানো */
+/* Streamlit-এর বাড়তি অংশ লুকানো */
 #MainMenu, footer, .stDeployButton, [data-testid="stToolbar"], [data-testid="stDecoration"] { display: none !important; }
 header[data-testid="stHeader"] { background: transparent; }
 
-/* Sundor o spshto font color fix */
+/* সুন্দর বাংলা font */
 .stApp, .stApp p, .stApp li, .stApp label, .stApp small, .stApp textarea, .stApp input, .stApp button,
 .stApp [data-testid="stCaptionContainer"] {
     font-family: 'Hind Siliguri', 'Noto Sans Bengali', 'Segoe UI', sans-serif;
@@ -114,7 +113,7 @@ header[data-testid="stHeader"] { background: transparent; }
     padding: 14px 18px;
 }
 
-/* Chat-er sob text-e sadha r high-contrast fix */
+/* Chat-এর সব text-এ সাদা ও হাই কনট্রাস্ট পড়া যাবে */
 [data-testid="stChatMessage"] *,
 [data-testid="stChatMessage"] p,
 [data-testid="stChatMessage"] span,
@@ -127,7 +126,7 @@ header[data-testid="stHeader"] { background: transparent; }
     text-shadow: 0 1px 3px rgba(0,0,0,0.95);
 }
 
-/* User Chat Bubble - Darker Red for Readability */
+/* User Chat Bubble - Darker Red */
 [data-testid="stChatMessage"]:has(.u-mark) {
     flex-direction: row-reverse;
     margin-left: 18%;
@@ -136,7 +135,7 @@ header[data-testid="stHeader"] { background: transparent; }
     box-shadow: 0 4px 20px rgba(0,0,0,0.6);
 }
 
-/* Ninja AI Chat Bubble - Deep Dark Blue/Black */
+/* Ninja AI Chat Bubble - Deep Dark */
 [data-testid="stChatMessage"]:has(.a-mark) {
     margin-right: 10%;
     background: rgba(12, 15, 28, 0.96) !important;
